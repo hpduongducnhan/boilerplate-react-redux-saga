@@ -84,14 +84,11 @@ export function* processApiRequest(
         }  else {
             yield put(errorCbs({message: error}))
         }
-        
-        // console.log('processApiRequest', 'url', url, 'error', error, 'put errorCb')
     }
 }
 
 
 export function createAction(actionType, actionPayload){
-    // console.log('createAction', actionType, actionPayload)
     return {
         type: actionType,
         payload: actionPayload
@@ -100,9 +97,4 @@ export function createAction(actionType, actionPayload){
 
 export function createHeaderJwt(token){
     return {Authorization: "Bearer " + token}
-}
-
-
-export function createMessage(type, actionType, text){
-    return { type, actionType, text , at: new Date().getTime()}
 }
